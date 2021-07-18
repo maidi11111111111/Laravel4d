@@ -12,34 +12,52 @@
                         @csrf
                         <div class="form group">
                             <div class="form-row">
+
                                 <div class="col">
-                                    <label for="">User Id</label>
-                                    <input type="text" name="user_id" class="form-control" placeholder="Tambahkan User Id">
+                                    <label for="">Nama Mahasiswa</label>
+                                    <select name="user_id" id="user_id" class="form-control">
+                                        <option value=""disabled selected>--Pilih User--</option>
+                                        @foreach ($user as $u)
+                                        <option value="{{ $u->id }}">{{ $u->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
+
                                 <div class="col">
                                     <label for="">NPM</label>
-                                    <input type="number" name="npm" class="form-control" placeholder="Tambahkan NPM">
-                                </div>
-                                <div class="col">
-                                    <label for="">Tanggal Lahir</label>
-                                    <input type="date" name="tgl_lahir" class="form-control" placeholder="Tambahkan Tanggal Lahir">
+                                    <input type="number" name="npm" class="form-control" placeholder="Tambahkan NPM" maxlength="8">
                                 </div>
                                 <div class="col">
                                     <label for="">Tempat Lahir</label>
                                     <input type="text" name="tempat_lahir" class="form-control" placeholder="Tambahkan Tempat Lahir">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form group">
+                        <div class="form-row">
+                        <div class="col">
+                                    <label for="">Tanggal Lahir</label>
+                                    <input type="date" name="tgl_lahir" class="form-control" placeholder="Tambahkan Tanggal Lahir">
+                                </div>
                                 <div class="col">
-                                    <label for="">Alamat</label>
-                                    <input type="text" name="alamat" class="form-control" placeholder="Tambahkan Alamat">
+                                    <label for="">Jenis Kelamin</label>
+                                    <select name="gender" id="gender" class="form-control">
+                                        <option value=""disabled selected>--Pilih Jenis Kelamin--</option>
+                                        <option value="L">Laki-laki</option>
+                                        <option value="P">Perempuan</option>
+                                    </select>
                                 </div>
                                 <div class="col">
                                     <label for="">Telepon</label>
-                                    <input type="text" name="telepon" class="form-control" placeholder="Tambahkan Telepon">
+                                    <input type="number" name="telepon" class="form-control" placeholder="Tambahkan Nomor Telepon">
                                 </div>
+                             </div>
+                        </div>
+                        <div class="form group">
+                        <div class="form-row">
                                 <div class="col">
-                                    <label for="">Gender</label><br>
-                                    <input type="radio" name="gender" value="L" selected>Laki-Laki<br>
-                                    <input type="radio" name="gender" value="P" >Perempaun
+                                    <label for="">Alamat</label>
+                                    <textarea name="alamat" class="form-control" cols="2" rows="3" placeholder="Tambahkan Alamat" style="resize: none"></textarea>
                                 </div>
                             </div>
                         </div>

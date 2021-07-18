@@ -19,9 +19,12 @@
                                 <th>SKS</th>
                                 <th>AKSI</th>
                             </tr>
+                            @php
+                                 $no = 1;
+                            @endphp
                             @foreach ($makul as $mk)
                             <tr>
-                                <td>{{ $mk->id }}</td>
+                                <td>{{ $no++ }}</td>
                                 <td>{{ $mk->kd_makul }}</td>
                                 <td>{{ $mk->nama_makul}}</td>
                                 <td>{{ $mk->sks}}</td>
